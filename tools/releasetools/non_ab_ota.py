@@ -216,15 +216,15 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
 
-  date = target_info.GetBuildProp("ro.blaze.build.date")
-  version = target_info.GetBuildProp("ro.blaze.version")
-  maintainer = target_info.GetBuildProp("ro.blaze.maintainer")
+  date = target_info.GetBuildProp("ro.lessaosp.build.date")
+  version = target_info.GetBuildProp("ro.lessaosp.version")
+  maintainer = target_info.GetBuildProp("ro.lessaosp.maintainer")
 
   if target_info.GetBuildProp("ro.product.model") is not None:
     model = target_info.GetBuildProp("ro.product.model")
     script.Print("***********************************************");
-    script.Print("           Project Blaze for %s"%(model));
-    script.Print("               BY: Aditya Singh                ");
+    script.Print("           LESSAOSP for %s"%(model));
+    script.Print("               BY: AGH0RA7                ");
     script.Print("   VERSION: %s"%(version));
     script.Print("   MAINTAINED BY: %s"%(maintainer));
     script.Print("   COMPILED ON: %s"%(date));
@@ -232,8 +232,8 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   else:
     name = target_info.GetBuildProp("ro.product.name")
     script.Print("***********************************************");
-    script.Print("           Project Blaze for %s"%(name));
-    script.Print("               BY: Aditya Singh                ");
+    script.Print("           LESSAOSP for %s"%(name));
+    script.Print("               BY: AGH0RA7                ");
     script.Print("   VERSION: %s"%(version));
     script.Print("   MAINTAINED BY: %s"%(maintainer));
     script.Print("   COMPILED ON: %s"%(date));

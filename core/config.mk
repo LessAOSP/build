@@ -441,8 +441,8 @@ endif
 FIND_LEAVES_EXCLUDES := $(addprefix --prune=, $(SCAN_EXCLUDE_DIRS) .repo .git)
 
 -include vendor/extra/BoardConfigExtra.mk
-ifneq ($(BLAZE_BUILD),)
-include vendor/blaze/config/BoardConfigBlaze.mk
+ifneq ($(LESSAOSP_BUILD),)
+include vendor/lessaosp/config/BoardConfigLESSAOSP.mk
 endif
 
 # The build system exposes several variables for where to find the kernel
@@ -1254,11 +1254,11 @@ include $(BUILD_SYSTEM)/sysprop_config.mk
 # consistency with those defined in BoardConfig.mk files.
 include $(BUILD_SYSTEM)/android_soong_config_vars.mk
 
-ifneq ($(BLAZE_BUILD),)
-ifneq ($(wildcard device/blaze/sepolicy/common/sepolicy.mk),)
+ifneq ($(LESSAOSP_BUILD),)
+ifneq ($(wildcard device/lessaosp/sepolicy/common/sepolicy.mk),)
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
-$(eval include device/blaze/sepolicy/common/sepolicy.mk)
+$(eval include device/lessaosp/sepolicy/common/sepolicy.mk)
 endif
 endif
 
